@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindX Cinema - Đăng nhập</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">MindX Cinema</div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <main class="container">
+        <div class="form-box">
+            <h1>Đăng nhập</h1>
+
+            <form onsubmit="login(event)">
+                <input
+                    type="text"
+                    id="loginUsername"
+                    placeholder="Tên đăng nhập"
+                    required
+                >
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Mật khẩu"
+                    required
+                >
+                <button type="submit" class="submit-btn">
+                    Đăng nhập
+                </button>
+                <div class="options">
+                    <label>
+                        <input type="checkbox">
+                        Ghi nhớ tôi
+                    </label>
+                    <a href="#">Quên mật khẩu?</a>
+                </div>
+            </form>
+
+            <p class="register-text">
+                Bạn chưa có tài khoản?
+                <a href="register.html">Đăng ký ngay</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 MindX Cinema
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
