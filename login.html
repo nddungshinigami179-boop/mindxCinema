@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindX Cinema - Đăng nhập</title>
-
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -20,18 +19,10 @@
             <h1>Đăng nhập</h1>
 
             <form onsubmit="login(event)">
-                <input
-                    type="text"
-                    id="loginUsername"
-                    placeholder="Tên đăng nhập"
-                    required
-                >
-                <input
-                    type="password"
-                    id="loginPassword"
-                    placeholder="Mật khẩu"
-                    required
-                >
+                <input type="text" id="loginUsername" placeholder="Tên đăng nhập">
+                <p class="error" id="loginUsernameError"></p>
+                <input type="password" id="loginPassword" placeholder="Mật khẩu">
+                <p class="error" id="loginPasswordError"></p>
                 <button type="submit" class="submit-btn">
                     Đăng nhập
                 </button>
@@ -40,13 +31,17 @@
                         <input type="checkbox">
                         Ghi nhớ tôi
                     </label>
-                    <a href="#">Quên mật khẩu?</a>
+                    <a href="#">
+                        Quên mật khẩu?
+                    </a>
                 </div>
             </form>
 
             <p class="register-text">
                 Bạn chưa có tài khoản?
-                <a href="register.html">Đăng ký ngay</a>
+                <a href="register.html">
+                    Đăng ký ngay
+                </a>
             </p>
         </div>
     </main>
