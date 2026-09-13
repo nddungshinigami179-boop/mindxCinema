@@ -153,16 +153,16 @@ function logout() {
     }
 }
 
-fetch('https://PROJECT_TOKEN.mockapi.io/users/1/tasks', {
+fetch('https://6aa61818d7765db985072b90.mockapi.io/food', {
   method: 'GET',
   headers: {'content-type':'application/json'},
-}).then(res => {
+}).then((res) => {
+    console.log(res)
   if (res.ok) {
-      return res.json();
+    return res.json();
   }
-  // handle error
-}).then(tasks => {
-  // Do something with the list of tasks
-}).catch(error => {
-  // handle error
+}).then((tasks) => {
+    console.log(tasks)
+}).catch((error) => {
+    console.log(error)
 })
