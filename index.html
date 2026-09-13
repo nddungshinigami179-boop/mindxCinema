@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindX Cinema</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">MINDX</div>
+
+        <nav class="nav">
+            <a href="#">Trang chủ</a>
+            <a href="#movies">Phim</a>
+            <a href="#new">Phim mới</a>
+            <a href="#popular">Phổ biến</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Tìm kiếm phim..."
+                    onkeyup="searchMovie()"
+                >
+                🔍
+            </div>
+            <span class="user">
+                👤 Xin chào!
+            </span>
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Đăng xuất
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="featured">⭐ PHIM NỔI BẬT</p>
+            <h1>THE LAST<br>JOURNEY</h1>
+            <p class="description">
+                Một hành trình đầy cảm xúc và những bí ẩn
+                đang chờ được khám phá. Hãy cùng bước vào
+                thế giới điện ảnh tuyệt vời của MindX Cinema.
+            </p>
+            <div class="hero-buttons">
+                <button class="watch-btn">
+                    ▶ Xem ngay
+                </button>
+                <button class="info-btn">
+                    ⓘ Thông tin
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <main class="main">
+        <section class="movie-section" id="popular">
+            <h2>🔥 Phim phổ biến</h2>
+            <div class="movie-list">
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>The Adventure</h3>
+                        <p>⭐ 8.7/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Night City</h3>
+                        <p>⭐ 8.5/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Dark World</h3>
+                        <p>⭐ 8.9/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Lost Planet</h3>
+                        <p>⭐ 8.3/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Dream World</h3>
+                        <p>⭐ 9.0/10</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section" id="new">
+            <h2>🎬 Phim mới cập nhật</h2>
+
+            <div class="movie-list">
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Future World</h3>
+                        <p>⭐ 8.6/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Final Mission</h3>
+                        <p>⭐ 8.8/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1512070679279-c2d4d5f2a8e1?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Beyond Space</h3>
+                        <p>⭐ 8.4/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Secret Story</h3>
+                        <p>⭐ 8.1/10</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section" id="movies">
+            <h2>⭐ Được đánh giá cao</h2>
+
+            <div class="movie-list">
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1574267432644-f610f8c7c8c7?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>The Beginning</h3>
+                        <p>⭐ 9.2/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Memories</h3>
+                        <p>⭐ 9.1/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+
+                    <div class="movie-info">
+                        <h3>Hidden Truth</h3>
+                        <p>⭐ 8.9/10</p>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=500&q=80"
+                        alt="Movie"
+                    >
+                    <div class="movie-info">
+                        <h3>Wild Road</h3>
+                        <p>⭐ 8.8/10</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">MINDX</div>
+        <p>MindX Cinema - Thế giới điện ảnh trong tầm tay</p>
+
+        <div class="footer-links">
+            <a href="#">Giới thiệu</a>
+            <a href="#">Điều khoản</a>
+            <a href="#">Chính sách</a>
+            <a href="#">Liên hệ</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 MindX Cinema. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

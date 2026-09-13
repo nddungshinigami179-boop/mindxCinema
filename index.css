@@ -154,14 +154,315 @@ footer {
     z-index: 5;
 }
 
+body {
+    background: #141414;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 45px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 100;
+    gap: 35px;
+}
+
+.header .logo {
+    color: #e50914;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #222;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.search-box input {
+    width: 160px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+.user {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.logout-btn {
+    padding: 9px 15px;
+    border: none;
+    border-radius: 4px;
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #f40612;
+}
+
+.hero {
+    height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.95),rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.1)), url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 500px;
+    margin-left: 70px;
+    margin-top: 70px;
+}
+
+.featured {
+    color: #e50914;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.watch-btn,
+.info-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.watch-btn {
+    background: white;
+    color: black;
+}
+
+.info-btn {
+    background: rgba(100, 100, 100, 0.7);
+    color: white;
+}
+
+.watch-btn:hover,
+.info-btn:hover {
+    opacity: 0.8;
+}
+
+.main {
+    padding: 30px 50px 70px;
+}
+
+.movie-section {
+    margin-bottom: 50px;
+}
+
+.movie-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.movie-card {
+    position: relative;
+    background: #222;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.movie-info p {
+    color: #f5c518;
+    font-size: 13px;
+}
+
+.footer {
+    padding: 50px;
+    background: #080808;
+    text-align: center;
+    color: #777;
+}
+
+.footer-logo {
+    color: #e50914;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+    .movie-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .user {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .search-box {
+        display: none;
+    }
+
+    .hero {
+        height: 550px;
+    }
+
+    .hero-content {
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .main {
+        padding: 25px 20px;
+    }
+    .movie-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .movie-card img {
+        height: 220px;
+    }
+
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
 
 @media (max-width: 500px) {
     header {
         padding-left: 25px;
     }
+
     .logo {
         font-size: 26px;
     }
+    
     .form-box {
         width: 100%;
         max-width: 380px;

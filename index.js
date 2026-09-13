@@ -19,7 +19,7 @@ function register(event) {
     let isValid = true;
 
     if (username.length < 6 || username.length > 18) {
-        usernameError.textContent = "Username phải từ 6 đến 18 ký tự.";
+        usernameError.textContent = "Tên người dùng phải từ 6 đến 18 ký tự.";
         isValid = false;
     }
 
@@ -31,13 +31,13 @@ function register(event) {
     }
 
     if (password.length < 8 || password.length > 20) {
-        passwordError.textContent = "Password phải từ 8 đến 20 ký tự.";
+        passwordError.textContent = "Mật khẩu phải từ 8 đến 20 ký tự.";
         isValid = false;
     }
 
     if (confirmPassword !== password) {
         confirmPasswordError.textContent =
-            "Verify Password phải trùng với Password.";
+            "Mật khẩu xác nhận phải trùng với mật khẩu.";
         isValid = false;
     }
 
@@ -89,13 +89,13 @@ function login(event) {
 
     if (username === "") {
         usernameError.textContent =
-            "Vui lòng nhập username.";
+            "Vui lòng nhập tên người dùng.";
         return;
     }
 
     if (password === "") {
         passwordError.textContent =
-            "Vui lòng nhập password.";
+            "Vui lòng nhập mật khẩu.";
         return;
     }
 
@@ -111,15 +111,44 @@ function login(event) {
         JSON.parse(savedUser);
     if (username !== user.username) {
         usernameError.textContent =
-            "Username không chính xác.";
+            "Tên người dùng không chính xác.";
         return;
     }
     if (password !== user.password) {
         passwordError.textContent =
-            "Password không chính xác.";
+            "Mật khẩu không chính xác.";
         return;
     }
     alert(
         "Đăng nhập thành công! Chào mừng bạn đến MindX Cinema 🎬"
     );
+    window.location.href = "index.html";
+}
+
+function searchMovie() {
+    const input = document.getElementById("searchInput");
+    const keyword = input.value.toLowerCase();
+    const movies = document.querySelectorAll(".movie-card");
+
+    movies.forEach(function(movie) {
+        const title =
+            movie.querySelector("h3")
+                .textContent
+                .toLowerCase();
+        if (title.includes(keyword)) {
+            movie.style.display = "block";
+        }
+        else {
+            movie.style.display = "none";
+        }
+    });
+}
+
+function logout() {
+    const confirmLogout =
+        confirm("Bạn có muốn đăng xuất không?");
+    if (confirmLogout) {
+        window.location.href =
+            "login.html";
+    }
 }
