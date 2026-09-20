@@ -166,3 +166,56 @@ fetch('https://6aa61818d7765db985072b90.mockapi.io/food', {
 }).catch((error) => {
     console.log(error)
 })
+
+const apiKey = '66618ee30321a9422e704a38b071a3fe';
+const baseUrl = 'https://api.themoviedb.org/3';
+const imgUrl = 'https://image.tmdb.org/t/p/w500';
+
+const trendingMoviesUrl = `${baseUrl}/trending/movie/day?api_key=${apiKey}&language=vi-VN`;
+
+async function getTrendingMovies() {
+    try {
+        const response = await fetch(trendingMoviesUrl);
+        if (!response.ok) {
+            throw new Error(`Lỗi kết nối mạng: ${response.status}`);
+        }
+        const data = await response.json();
+        displayMovies(data.results);
+    } catch (error) {
+        console.error('Không thể lấy dữ liệu phim:', error);
+
+        document.getElementById('movies').innerHTML = `
+            <p style="color: red;">
+                Đã xảy ra lỗi khi tải phim.
+            </p>
+        `;
+    }
+}
+
+function displayMovies(movies) {
+    const moviesContainer = document.getElementById('movies');
+    moviesContainer.innerHTML = '';
+
+    movies.forEach(movie => {
+        const movieCard = document.createElement('div');
+        movieCard.classList.add('movie-card');
+        const posterPath = movie.poster_path
+            ? `${imgUrl}${movie.poster_path}`
+            : 'https://via.placeholder.com/500x750?text=No+Image';
+
+        movieCard.innerHTML = `
+            <img src="${posterPath}" alt="${movie.title}">
+            <div class="movie-info">
+                <h3 class="movie-title">
+                    ${movie.title}
+                </h3>
+                <span class="movie-rating">
+                    ★ ${movie.vote_average.toFixed(1)}
+                </span>
+            </div>
+        `;
+        moviesContainer.appendChild(movieCard);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', getTrendingMovies);

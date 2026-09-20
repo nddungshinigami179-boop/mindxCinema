@@ -333,29 +333,43 @@ body {
   gap: 18px;
 }
 
+.movies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
 .movie-card {
-  position: relative;
-  background: #222;
-  border-radius: 5px;
+  background: #1e1e1e;
+  border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
+  color: white;
   transition: 0.3s;
 }
 
 .movie-card:hover {
-  transform: scale(1.05);
-  z-index: 10;
+  transform: translateY(-8px);
 }
 
 .movie-card img {
   width: 100%;
-  height: 270px;
+  height: 300px;
   object-fit: cover;
-  display: block;
 }
 
 .movie-info {
   padding: 12px;
+}
+
+.movie-title {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.movie-rating {
+  color: #ffd700;
+  font-weight: bold;
 }
 
 .movie-info h3 {

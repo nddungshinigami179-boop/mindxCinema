@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+body{
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   min-height: 100vh;
   background-image: url("https://chuyendoiso.laichau.gov.vn/uploads/news/2022_12/netflix-16695549643941955374520-0-0-1125-1800-crop-16695549741742062446321.jpeg");
@@ -14,7 +14,7 @@ body {
   color: white;
 }
 
-.overlay {
+.overlay{
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@ body {
   z-index: 0;
 }
 
-header {
+header{
   position: fixed;
   top: 0;
   left: 0;
