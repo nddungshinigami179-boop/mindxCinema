@@ -8,77 +8,177 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">MindX Cinema</div>
-
-        <nav class="nav">
-            <a href="#">Trang chủ</a>
-            <a href="#movies">Phim</a>
-            <a href="#new">Phim mới</a>
-            <a href="#popular">Phổ biến</a>
-        </nav>
-
-        <div class="header-right">
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Tìm kiếm phim..."
-                    onkeyup="searchMovie()"
-                >
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="#" class="logo">
+                MindX<span>Cinema</span>
+            </a>
+            <nav>
+                <a href="#">Trang chủ</a>
+                <a href="#trending">Thịnh hành</a>
+                <a href="#popular">Phổ biến</a>
+                <a href="#topRated">Đánh giá cao</a>
+                <a href="#upcoming">Sắp chiếu</a>
+            </nav>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn" id="logoutBtn">Đăng xuất</button>      
+            <button class="language">VI</button>
+            <button class="search-btn" id="searchBtn">
                 🔍
-            </div>
-            <span class="user">
-                👤 Xin chào!
-            </span>
-            <button
-                class="logout-btn"
-                onclick="logout()"
-            >
-                Đăng xuất
             </button>
         </div>
     </header>
 
-    <section class="hero">
+    <div class="search-box" id="searchBox">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm phim..."
+        >
+        <button id="searchSubmit">
+            Tìm
+        </button>
+    </div>
+
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="featured">⭐ PHIM NỔI BẬT</p>
-            <h1>SPIDERMAN:<br>BRAND NEW DAY</h1>
-            <p class="description">
-                Một hành trình đầy cảm xúc và những bí ẩn
-                đang chờ được khám phá. Hãy cùng bước vào
-                thế giới điện ảnh tuyệt vời của MindX Cinema.
+            <span class="hero-label">
+                PHIM NỔI BẬT
+            </span>
+            <h1 id="heroTitle">
+                Đang tải...
+            </h1>
+            <div class="hero-meta">
+                <span id="heroRating">
+                    ⭐ 0.0
+                </span>
+                <span id="heroDate">
+                    2026
+                </span>
+            </div>
+            <p id="heroDescription">
+                Đang tải thông tin phim...
             </p>
             <div class="hero-buttons">
-                <button class="watch-btn">
+                <button class="btn-primary">
                     ▶ Xem ngay
                 </button>
-                <button class="info-btn">
-                    ⓘ Thông tin
+                <button class="btn-secondary">
+                    + Danh sách
                 </button>
             </div>
         </div>
     </section>
 
-    <main class="main">
-        <h2>Trendings</h2>
-        <div id="movies" class="movies"></div>
+    <main>
+        <section class="movie-section" id="trending">
+            <div class="section-header">
+                <div>
+                    <h2>🔥 Phim thịnh hành</h2>
+                    <p>Những bộ phim đang được quan tâm</p>
+                </div>
+                <div class="tabs">
+                    <button class="active">
+                        Hôm nay
+                    </button>
+                    <button>
+                        Tuần này
+                    </button>
+                </div>
+            </div>
+            <div class="movie-row" id="trendingMovies">
+                <div class="loading">
+                    Đang tải phim...
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section" id="popular">
+            <div class="section-header">
+                <div>
+                    <h2>⭐ Phim phổ biến</h2>
+                    <p>Những bộ phim được nhiều người xem</p>
+                </div>
+            </div>
+            <div
+                class="movie-row"
+                id="popularMovies"
+            >
+                <div class="loading">
+                    Đang tải phim...
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section" id="topRated">
+            <div class="section-header">
+                <div>
+                    <h2>🏆 Đánh giá cao</h2>
+                    <p>Những bộ phim có điểm đánh giá cao</p>
+                </div>
+            </div>
+            <div class="movie-row" id="topRatedMovies">
+                <div class="loading">
+                    Đang tải phim...
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section" id="upcoming">
+            <div class="section-header">
+                <div>
+                    <h2>🎬 Phim sắp chiếu</h2>
+                    <p>Những bộ phim sắp được phát hành</p>
+                </div>
+            </div>
+
+            <div class="movie-row" id="upcomingMovies">
+                <div class="loading">
+                    Đang tải phim...
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section" id="nowPlaying">
+            <div class="section-header">
+                <div>
+                    <h2>🍿 Đang chiếu</h2>
+                    <p>Những bộ phim đang được công chiếu</p>
+                </div>
+            </div>
+            <div class="movie-row" id="nowPlayingMovies">
+                <div class="loading">
+                    Đang tải phim...
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section search-result" id="searchResultSection">
+            <div class="section-header">
+                <div>
+                    <h2>🔎 Kết quả tìm kiếm</h2>
+                    <p id="searchResultText"></p>
+                </div>
+            </div>
+
+            <div
+                class="movie-row"
+                id="searchResults"
+            ></div>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-logo">MINDX</div>
-        <p>MindX Cinema - Thế giới điện ảnh trong tầm tay</p>
-
-        <div class="footer-links">
-            <a href="#">Giới thiệu</a>
-            <a href="#">Điều khoản</a>
-            <a href="#">Chính sách</a>
-            <a href="#">Liên hệ</a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                MindX<span>Cinema</span>
+            </div>
+            <p class="copyright">
+                © 2026 MindX Cinema
+            </p>
         </div>
-
-        <p class="copyright">
-            © 2026 MindX Cinema. All rights reserved.
-        </p>
     </footer>
 
     <script>
