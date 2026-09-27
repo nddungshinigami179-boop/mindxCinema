@@ -159,6 +159,8 @@ if (logoutBtn) {
     });
 }
 
+// trangchu
+
 fetch('https://6aa61818d7765db985072b90.mockapi.io/food', {
   method: 'GET',
   headers: {'content-type':'application/json'},
@@ -260,7 +262,6 @@ function displayMovies(movies, container) {
                 </div>
             </div>
         `;
-        // Click vào phim
         card.addEventListener('click', () => {
             window.location.href =
                 `detail.html?id=${movie.id}`;
