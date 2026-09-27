@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xem phim - MindX Cinema</title>
+  <link rel="stylesheet" href="index2.css" />
+  <link rel="stylesheet" href="watch.css" />
+</head>
+<body>
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="logo"> MindX<span>Cinema</span> </a>
+      </div>
+    </header>
+
+    <main class="watch-page">
+      <a href="javascript:history.back()" class="back-button"> ← Quay lại </a>
+      <h1 id="watchTitle">Đang tải...</h1>
+      <div class="video-container">
+        <video id="moviePlayer" controls poster="">
+            <button id="playBtn"></button>
+            <iframe src="https://www.2embed.online/embed/movie/{id}"
+                width="100%" height="100%"
+                frameborder="0" allowfullscreen>
+            </iframe>
+        </video>
+      </div>
+    </main>
+
+    <script src="watch.js"></script>
+</body>
+</html>

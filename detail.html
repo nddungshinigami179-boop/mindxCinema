@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết phim</title>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="detail.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                MindX<span>Cinema</span>
+            </a>
+            <nav>
+                <a href="index.html">Trang chủ</a>
+                <a href="index.html#trending">Thịnh hành</a>
+                <a href="index.html#popular">Phổ biến</a>
+                <a href="index.html#topRated">Đánh giá cao</a>
+                <a href="index.html#upcoming">Sắp chiếu</a>
+            </nav>
+        </div>
+        <div class="nav-right">
+            <button class="language">
+                VI
+            </button>
+        </div>
+    </header>
+    <!-- MOVIE DETAIL -->
+    <main class="detail-page">
+        <section class="movie-detail">
+            <div class="movie-detail-poster">
+                <img id="moviePoster" src="" alt="Poster phim">
+            </div>
+            <div class="movie-detail-info">
+                <h1 id="movieTitle">
+                    Đang tải...
+                </h1>
+                <div class="movie-meta">
+                    <span id="movieRating">
+                        ⭐ --
+                    </span>
+
+                    <span id="movieYear">
+                        --
+                    </span>
+
+                    <span id="movieRuntime">
+                        --
+                    </span>
+                </div>
+
+                <p class="movie-overview">
+                    <strong>Nội dung:</strong>
+                </p>
+                <p id="movieOverview">
+                    Đang tải thông tin...
+                </p>
+
+                <div class="movie-extra">
+                    <p>
+                        <strong>Thể loại:</strong>
+                        <span id="movieGenres">
+                            --
+                        </span>
+                    </p>
+                    <p>
+                        <strong>Ngôn ngữ:</strong>
+                        <span id="movieLanguage">
+                            --
+                        </span>
+                    </p>
+                </div>
+
+                <div class="movie-actions">
+                    <button id="watchButton" class="watch-button">
+                        ▶ Xem phim
+                    </button>
+                    <a href="#trailer" class="trailer-button">
+                        🎬 Trailer
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- TRAILER -->
+        <section id="trailer" class="trailer-section">
+            <h2>
+                🎬 Trailer
+            </h2>
+            <div id="trailerContainer" class="trailer-container">
+                Đang tải trailer...
+            </div>
+        </section>
+    </main>
+
+    <script src="detail.js"></script>
+</body>
+</html>

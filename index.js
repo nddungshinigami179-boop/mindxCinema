@@ -211,12 +211,9 @@ async function fetchMovies(url) {
 }
 
 function displayMovies(movies, container) {
-    if (!container) {
-        console.error("Không tìm thấy container!");
-        return;
-    }
+    if (!container) return;
     container.innerHTML = '';
-    if (!movies || movies.length === 0) {
+    if (movies.length === 0) {
         container.innerHTML = `
             <div class="loading">
                 Không có dữ liệu phim.
@@ -227,7 +224,6 @@ function displayMovies(movies, container) {
     movies.forEach(movie => {
         const card = document.createElement('div');
         card.className = 'movie-card';
-
         const title =
             movie.title ||
             movie.original_title ||
@@ -264,6 +260,11 @@ function displayMovies(movies, container) {
                 </div>
             </div>
         `;
+        // Click vào phim
+        card.addEventListener('click', () => {
+            window.location.href =
+                `detail.html?id=${movie.id}`;
+        });
         container.appendChild(card);
     });
 }
